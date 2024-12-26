@@ -7,6 +7,12 @@ export default function App() {
   const[lkr, setLkr] = useState('');
   const[usd, setUsd] = useState('');
 
+  const handleLKR = (value) => {
+  }
+
+  const handleUSD = (value) => {
+  }
+
 
   return (
     <>
