@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { PaperProvider, Text, TextInput } from 'react-native-paper';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>This Currency Converter app allows users to effortlessly convert between Sri Lankan Rupees (LKR) and US Dollars (USD). Built with React Native Expo and styled using React Native Paper, it features a clean interface, input fields for amounts, conversion type selection and instant results for quick and accurate currency calculations.</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <PaperProvider>
+        <View style={styles.container}>
+          <StatusBar style="auto" />
+          <Text style={styles.text} variant="headlineLarge">Currency Converter App</Text>
+          <TextInput style={styles.input}
+            label="Enter LKR"
+            mode='outlined'
+          />
+          <TextInput style={styles.input}
+            label="Enter USD"
+            mode='outlined'
+          />
+        </View>
+      </PaperProvider>
+    </>
   );
 }
 
@@ -16,5 +29,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    color: 'black'
+  },
+  input: {
+    padding: 10,
+    margin: 10,
+    width: '80%',
   },
 });
