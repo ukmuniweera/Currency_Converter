@@ -14,6 +14,8 @@ export default function App() {
   }
 
   const handleUSD = (value) => {
+    setUsd(value);
+    setLkr((value/exchangeRate).toFixed(4));
   }
 
 
