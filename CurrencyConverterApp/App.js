@@ -1,8 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { PaperProvider, Text, TextInput } from 'react-native-paper';
 
 export default function App() {
+  const[lkr, setLkr] = useState('');
+  const[usd, setUsd] = useState('');
+
+
   return (
     <>
       <PaperProvider>
@@ -12,6 +17,7 @@ export default function App() {
           <TextInput style={styles.input}
             label="Enter LKR"
             mode='outlined'
+            value=''
           />
           <TextInput style={styles.input}
             label="Enter USD"
