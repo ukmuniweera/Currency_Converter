@@ -17,11 +17,14 @@ export default function App() {
           <TextInput style={styles.input}
             label="Enter LKR"
             mode='outlined'
-            value=''
+            value={lkr}
+            onChangeText={}
           />
           <TextInput style={styles.input}
             label="Enter USD"
             mode='outlined'
+            value={usd}
+            onChangeText={}
           />
         </View>
       </PaperProvider>
