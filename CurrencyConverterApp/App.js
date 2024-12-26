@@ -4,10 +4,13 @@ import { StyleSheet, View } from 'react-native';
 import { PaperProvider, Text, TextInput } from 'react-native-paper';
 
 export default function App() {
-  const[lkr, setLkr] = useState('');
-  const[usd, setUsd] = useState('');
+  const [lkr, setLkr] = useState('');
+  const [usd, setUsd] = useState('');
+  const exchangeRate = 0.0034;
 
   const handleLKR = (value) => {
+    setLkr(value);
+    setUsd((value*exchangeRate).toFixed(4));
   }
 
   const handleUSD = (value) => {
@@ -21,16 +24,18 @@ export default function App() {
           <StatusBar style="auto" />
           <Text style={styles.text} variant="headlineLarge">Currency Converter App</Text>
           <TextInput style={styles.input}
-            label="Enter LKR"
+            label="Sri Lankan Rupee"
             mode='outlined'
             value={lkr}
-            onChangeText={}
+            onChangeText={handleLKR}
+            keyboardType="numeric"
           />
           <TextInput style={styles.input}
-            label="Enter USD"
+            label="United States Dollar"
             mode='outlined'
             value={usd}
-            onChangeText={}
+            onChangeText={handleUSD}
+            keyboardType="numeric"
           />
         </View>
       </PaperProvider>
