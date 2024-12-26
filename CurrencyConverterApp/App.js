@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { PaperProvider, Text, TextInput } from 'react-native-paper';
+import { PaperProvider, Text, TextInput, Divider } from 'react-native-paper';
 
 export default function App() {
   const [lkr, setLkr] = useState('');
@@ -10,14 +10,13 @@ export default function App() {
 
   const handleLKR = (value) => {
     setLkr(value);
-    setUsd((value*exchangeRate).toFixed(4));
+    setUsd((value * exchangeRate).toFixed(4));
   }
 
   const handleUSD = (value) => {
     setUsd(value);
-    setLkr((value/exchangeRate).toFixed(4));
+    setLkr((value / exchangeRate).toFixed(4));
   }
-
 
   return (
     <>
@@ -25,6 +24,7 @@ export default function App() {
         <View style={styles.container}>
           <StatusBar style="auto" />
           <Text style={styles.text} variant="headlineLarge">Currency Converter App</Text>
+          <Divider />
           <TextInput style={styles.input}
             label="Sri Lankan Rupee"
             mode='outlined'
